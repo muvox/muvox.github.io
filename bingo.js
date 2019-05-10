@@ -2,12 +2,12 @@ window.onload = initAll;
 
 var usedNums = new Array(25);
 
-var jonSnow = {
-  image : 'images/jonSnow.png',
-  name : 'Jon Snow'
-}
-
-var arrayOfObject = [jonSnow]
+var arrayOfObject = [
+  {
+    name: 'Jon Snow',
+    image: 'images/jonSnow.png'
+  }
+]
 
 function initAll() {
   var boksi = document.getElementById('boksi');

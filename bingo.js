@@ -2,7 +2,7 @@ window.onload = initAll;
 
 var usedNums = new Array(25);
 
-var arrayOfObject = [
+var arrayOfObjects = [
   {
     name: 'Jon Snow',
     image: 'images/jonSnow.png'
@@ -37,7 +37,7 @@ var arrayOfObject = [
   },
   {
     name: 'Euron Grayjoy',
-    image: 'images/euronGreyjoy.png'
+    image: 'images/euronGrayjoy.png'
   },
   {
     name: 'Gendry',
@@ -96,8 +96,8 @@ var arrayOfObject = [
     image: 'images/varys.png'
   },
   {
-    name: 'Yara Greyjoy',
-    image: 'images/yaraGreyjoy.png'
+    name: 'Yara Grayjoy',
+    image: 'images/yaraGrayjoy.png'
   },
   {
     name: 'Arya Stark',
@@ -107,9 +107,9 @@ var arrayOfObject = [
 
 function initAll() {
   var boksi = document.getElementById("boksi");
-  console.log(arrayOfObject[0])
-  document.getElementById('teksti').innerHTML = arrayOfObject[0].name;
-  // boksi.src = arrayOfObject[0].image;
+  console.log(arrayOfObjects[0])
+  document.getElementById('teksti').innerHTML = arrayOfObjects[0].name;
+  // boksi.src = arrayOfObjects[0].image;
   if(document.getElementById) {
     document.getElementById("reload").onclick = anotherCard;
     newCard();
@@ -120,13 +120,15 @@ function initAll() {
 
 
 function newCard() {
+  shuffleArray(arrayOfObjects)
   var table = document.getElementById("table");
   var arrayOfCells = tableCells(table)
   console.log(arrayOfCells)
     for (var i = 0; i <= 25; i++) {
       console.log(arrayOfCells[i].id)
-      setText(arrayOfCells[i].id)
-      setImage(arrayOfCells[i].id)
+      // setText(arrayOfCells[i].id)
+      // setImage(arrayOfCells[i].id)
+      setSquare(arrayOfCells[i].id, arrayOfObjects[i].image, arrayOfObjects[i].name)
      }
  }
 
@@ -148,6 +150,7 @@ function setText(cellTextId){
 function setImage(cellId){
   var currentSquare = cellId
   var currentImage = cellId + "i"
+  var currentText = currentCell + "t"
 
   var imageSource = document.getElementById(currentImage);
   console.log(imageSource)
@@ -155,17 +158,25 @@ function setImage(cellId){
   console.log(imageSource)
 }
 
-function setSquare(thisSquare){
-  var currentSquare = "sq" + thisSquare;
-  var newNum = getNewNum();
-  var currentSquareImage = "sq"+thisSquare+"i"
-  do{
-    newNum = getNewNum();
-  }while(usedNums[newNum]);
+function setSquare(cellId, image, name){
+  var currentImage = cellId + "i"
+  var currentText = cellId + "t"
+  var image = image
+  var name = name
 
-  usedNums[newNum] = true;
-  document.getElementById(currentSquare).innerHTML = newNum;
+  var imageSource = document.getElementById(currentImage);
+  var textSource = document.getElementById(currentText).innerHTML = name
+  imageSource.src = image
 
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
 
 function getNewNum() {

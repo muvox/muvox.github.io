@@ -109,7 +109,7 @@ function initAll() {
   var boksi = document.getElementById("boksi");
   console.log(arrayOfObject[0])
   document.getElementById('teksti').innerHTML = arrayOfObject[0].name;
-  boksi.src = arrayOfObject[0].image;
+  // boksi.src = arrayOfObject[0].image;
   if(document.getElementById) {
     document.getElementById("reload").onclick = anotherCard;
     newCard();
@@ -118,32 +118,39 @@ function initAll() {
   }
 }
 
-//TODO: Proper iteration through the damn shitfuck
 
 function newCard() {
   var table = document.getElementById("table");
-    for (var i = 0, row; row = table.rows[i]; i++) {
-   //iterate through
-   console.log(row+" row "+i)
-   //rows would be accessed using the "row" variable assigned in the for loop
-      for (var j = 0, col; col = row.cells[j]; j++) {
-        console.log(col+" col "+j)
-
-
-
-     //iterate through columns
-     //columns would be accessed using the "col" variable assigned in the for loop
-   }
+  var arrayOfCells = tableCells(table)
+  console.log(arrayOfCells)
+    for (var i = 0; i <= 25; i++) {
+      console.log(arrayOfCells[i].id)
+      setText(arrayOfCells[i].id)
+      setImage(arrayOfCells[i].id)
+     }
  }
+
+function tableCells(t){
+   if(t.cells) return t.cells;
+   for(var a=[], r=t.rows, y=0, c, x; t=r[y++];){
+      for(c=t.cells, x=0; t=c[x++]; a.push(t));
+   }
+   return a;
 }
 
-function setImage(row, column){
-  var currentSquare = "sq" + row + column
-  var currentImage = currentSquare + "i"
-  console.log(currentImage)
+function setText(cellTextId){
+  var currentCell = cellTextId
+  var currentText = currentCell + "t"
+
+  var textSource = document.getElementById(currentText).innerHTML = "Jon Snow"
+}
+
+function setImage(cellId){
+  var currentSquare = cellId
+  var currentImage = cellId + "i"
 
   var imageSource = document.getElementById(currentImage);
-
+  console.log(imageSource)
   imageSource.src = "images/jonSnow.png"
   console.log(imageSource)
 }

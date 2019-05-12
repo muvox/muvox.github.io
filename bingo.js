@@ -126,8 +126,6 @@ function newCard() {
   console.log(arrayOfCells)
     for (var i = 0; i <= 25; i++) {
       console.log(arrayOfCells[i].id)
-      // setText(arrayOfCells[i].id)
-      // setImage(arrayOfCells[i].id)
       setSquare(arrayOfCells[i].id, arrayOfObjects[i].image, arrayOfObjects[i].name)
      }
  }
@@ -138,24 +136,6 @@ function tableCells(t){
       for(c=t.cells, x=0; t=c[x++]; a.push(t));
    }
    return a;
-}
-
-function setText(cellTextId){
-  var currentCell = cellTextId
-  var currentText = currentCell + "t"
-
-  var textSource = document.getElementById(currentText).innerHTML = "Jon Snow"
-}
-
-function setImage(cellId){
-  var currentSquare = cellId
-  var currentImage = cellId + "i"
-  var currentText = currentCell + "t"
-
-  var imageSource = document.getElementById(currentImage);
-  console.log(imageSource)
-  imageSource.src = "images/jonSnow.png"
-  console.log(imageSource)
 }
 
 function setSquare(cellId, image, name){
@@ -177,12 +157,6 @@ function shuffleArray(array) {
         array[i] = array[j];
         array[j] = temp;
     }
-}
-
-function getNewNum() {
-  var min = 0
-  var max = 24
-  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function anotherCard() {

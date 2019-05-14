@@ -198,7 +198,7 @@ function dead(el) {
   }
 
   console.log(character.id+character.dead)
-  checkVerticalBingo()
+  checkForBingo()
 }
 
 function checkPerson(id) {
@@ -210,101 +210,31 @@ function checkPerson(id) {
 function checkForBingo() {
         checkVerticalBingo();
         checkHorizontalBingo();
-        checkDiagonalBingo();
-        checkCornersBingo();
+
+}
+
+function bingo(){
+  console.log("bingo")
 }
 
 function checkVerticalBingo() {
-  if(checklist[0].dead === "true" && checklist[1].dead === "true" && checklist[2].dead === "true" && checklist[3].dead === "true" && checklist[4].dead === "true")
-    console.log("bingo")
-  console.log(checklist[0].dead)
+  if(checklist[0].dead === "true" && checklist[5].dead === "true" && checklist[10].dead === "true" && checklist[15].dead === "true" && checklist[20].dead === "true"){
+    bingo()
+} else if(checklist[1].dead === "true" && checklist[6].dead === "true" && checklist[11].dead === "true" && checklist[16].dead === "true" && checklist[21].dead === "true"){
+  bingo()
+} else if(checklist[2].dead === "true" && checklist[7].dead === "true" && checklist[12].dead === "true" && checklist[17].dead === "true" && checklist[22].dead === "true"){
+    bingo()
+} else if(checklist[3].dead === "true" && checklist[8].dead === "true" && checklist[13].dead === "true" && checklist[18].dead === "true" && checklist[23].dead === "true"){
+        bingo()
+} else if(checklist[4].dead === "true" && checklist[9].dead === "true" && checklist[14].dead === "true" && checklist[19].dead === "true" && checklist[24].dead === "true"){
+        bingo()
 }
+}
+
 
 function checkHorizontalBingo() {
-    j = 0;
-    for (var i = 0; i < 5; i++) {
-        switch(i) {
-            case 0:
-                var sq1 = document.getElementById('sq' + i);
-                var sq2 = document.getElementById('sq' + (i + 1));
-                var sq3 = document.getElementById('sq' + (i + 2));
-                var sq4 = document.getElementById('sq' + (i + 3));
-                var sq5 = document.getElementById('sq' + (i + 4));
-                break;
-            case 1:
-                var sq1 = document.getElementById('sq' + (i + 4));
-                var sq2 = document.getElementById('sq' + (i + 5));
-                var sq3 = document.getElementById('sq' + (i + 6));
-                var sq4 = document.getElementById('sq' + (i + 7));
-                var sq5 = document.getElementById('sq' + (i + 8));
-                break;
-            case 2:
-                var sq1 = document.getElementById('sq' + (i + 8));
-                var sq2 = document.getElementById('sq' + (i + 9));
-                var sq3 = document.getElementById('sq' + (i + 10));
-                var sq4 = document.getElementById('sq' + (i + 11));
-                var sq5 = document.getElementById('sq' + (i + 12));
-                break;
-            case 3:
-                var sq1 = document.getElementById('sq' + (i + 12));
-                var sq2 = document.getElementById('sq' + (i + 13));
-                var sq3 = document.getElementById('sq' + (i + 14));
-                var sq4 = document.getElementById('sq' + (i + 15));
-                var sq5 = document.getElementById('sq' + (i + 16));
-                break;
-            case 4:
-                var sq1 = document.getElementById('sq' + (i + 16));
-                var sq2 = document.getElementById('sq' + (i + 17));
-                var sq3 = document.getElementById('sq' + (i + 18));
-                var sq4 = document.getElementById('sq' + (i + 19));
-                var sq5 = document.getElementById('sq' + (i + 20));
-                break;
-        }
-        checkLines(sq1, sq2, sq3, sq4, sq5);
-    }
-}
+  if(checklist[0].dead === "true" && checklist[1].dead === "true" && checklist[2].dead === "true" && checklist[3].dead === "true" && checklist[4].dead === "true"){
+    console.log("bingo")
 
-function checkDiagonalBingo() {
-    for (var i = 0; i < 2; i++) {
-        switch(i) {
-            case 0:
-                var sq1 = document.getElementById('sq' + 0);
-                var sq2 = document.getElementById('sq' + 6);
-                var sq3 = document.getElementById('sq' + 12);
-                var sq4 = document.getElementById('sq' + 18);
-                var sq5 = document.getElementById('sq' + 24);
-                break;
-            case 1:
-                var sq1 = document.getElementById('sq' + 4);
-                var sq2 = document.getElementById('sq' + 8);
-                var sq3 = document.getElementById('sq' + 12);
-                var sq4 = document.getElementById('sq' + 16);
-                var sq5 = document.getElementById('sq' + 20);
-                break;
-        }
-        checkLines(sq1, sq2, sq3, sq4, sq5);
-    }
-}
-
-function checkLines(sq1, sq2, sq3, sq4, sq5) {
-    if (sq1.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq1.value)) &&
-        sq2.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq2.value)) &&
-        sq3.value == "FREE" &&
-        sq4.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq4.value)) &&
-        sq5.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq5.value))) {
-            youWin(sq1, sq2, sq3, sq4, sq5);
-            return;
-    }
-    else if (sq1.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq1.value)) &&
-            sq2.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq2.value)) &&
-            sq3.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq3.value)) &&
-            sq4.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq4.value)) &&
-            sq5.style.backgroundColor == "lightblue" && calledNumbers.includes(parseInt(sq5.value))) {
-                youWin(sq1, sq2, sq3, sq4, sq5);
-                return;
-    }
-    else {
-        document.getElementById("currentCall").innerHTML = "Not a valid bingo! Keep trying!";
-        return;
-    }
+  }
 }

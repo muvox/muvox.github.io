@@ -2,8 +2,7 @@ window.onload = initAll;
 
 var usedNums = new Array(25);
 
-var arrayOfObjects = [
-  {
+var arrayOfObjects = [{
     name: 'Jon Snow',
     image: 'images/jonSnow.png'
   },
@@ -112,10 +111,10 @@ var checklist = []
 function initAll() {
   var boksi = document.getElementById("boksi");
   // boksi.src = arrayOfObjects[0].image;
-  if(document.getElementById) {
+  if (document.getElementById) {
     document.getElementById("reload").onclick = anotherCard;
     newCard();
-  }else{
+  } else {
     alert("Your browser does not support this script.");
   }
 }
@@ -125,32 +124,29 @@ function newCard() {
   shuffleArray(arrayOfObjects)
   var table = document.getElementById("table");
   arrayOfCells = tableCells(table)
-  console.log(arrayOfCells)
-    for (var i = 0; i <= 24; i++) {
-      setSquare(arrayOfCells[i].id, arrayOfObjects[i].image, arrayOfObjects[i].name)
-     }
+  for (var i = 0; i <= 24; i++) {
+    setSquare(arrayOfCells[i].id, arrayOfObjects[i].image, arrayOfObjects[i].name)
+  }
 
   checklist = arrayOfCells.slice()
 
-  for(c in checklist){
-    console.log(checklist[c].id)
+  for (c in checklist) {
     checklist[c] = {
-      id : checklist[c].id,
-      dead : 'false'
+      id: checklist[c].id,
+      dead: 'false'
     }
   }
-  console.log(checklist)
- }
-
-function tableCells(t){
-   if(t.cells) return t.cells;
-   for(var a=[], r=t.rows, y=0, c, x; t=r[y++];){
-      for(c=t.cells, x=0; t=c[x++]; a.push(t));
-   }
-   return a;
 }
 
-function setSquare(cellId, image, name){
+function tableCells(t) {
+  if (t.cells) return t.cells;
+  for (var a = [], r = t.rows, y = 0, c, x; t = r[y++];) {
+    for (c = t.cells, x = 0; t = c[x++]; a.push(t));
+  }
+  return a;
+}
+
+function setSquare(cellId, image, name) {
   var currentImage = cellId + "i"
   var currentText = cellId + "t"
   var image = image
@@ -163,18 +159,27 @@ function setSquare(cellId, image, name){
 }
 
 function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+  for (var i = array.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }
 
 function anotherCard() {
-  for (var i = 1; i < usedNums.length; i++){
+  for (var i = 1; i < usedNums.length; i++) {
     usedNums[i] = false;
   };
+
+  for (var i = 0; i < checklist.length; i++){
+    checklist[i].dead = 'false'
+    var parent = arrayOfCells[i].childNodes
+    var node = parent[1].childNodes
+    var node2 = node[3].childNodes
+    var actualNode = node2[1]
+    actualNode.style.visibility == "hidden"
+  }
 
   newCard();
   return false;
@@ -189,7 +194,7 @@ function dead(el) {
   var checkId = parent.id
   var character = checkPerson(checkId)
 
-  if(actualNode.style.visibility == "hidden"){
+  if (actualNode.style.visibility == "hidden") {
     character.dead = "true"
     actualNode.style.visibility = ("visible")
   } else {
@@ -197,7 +202,6 @@ function dead(el) {
     actualNode.style.visibility = ("hidden")
   }
 
-  console.log(character.id+character.dead)
   checkForBingo()
 }
 
@@ -208,33 +212,49 @@ function checkPerson(id) {
 }
 
 function checkForBingo() {
-        checkVerticalBingo();
-        checkHorizontalBingo();
+  checkVerticalBingo();
+  checkHorizontalBingo();
+  checkForAngledBingo();
 
 }
 
-function bingo(){
-  console.log("bingo")
+function bingo() {
+  $('#bingoModal').modal('toggle')
 }
 
 function checkVerticalBingo() {
-  if(checklist[0].dead === "true" && checklist[5].dead === "true" && checklist[10].dead === "true" && checklist[15].dead === "true" && checklist[20].dead === "true"){
+  if (checklist[0].dead === "true" && checklist[5].dead === "true" && checklist[10].dead === "true" && checklist[15].dead === "true" && checklist[20].dead === "true") {
     bingo()
-} else if(checklist[1].dead === "true" && checklist[6].dead === "true" && checklist[11].dead === "true" && checklist[16].dead === "true" && checklist[21].dead === "true"){
-  bingo()
-} else if(checklist[2].dead === "true" && checklist[7].dead === "true" && checklist[12].dead === "true" && checklist[17].dead === "true" && checklist[22].dead === "true"){
+  } else if (checklist[1].dead === "true" && checklist[6].dead === "true" && checklist[11].dead === "true" && checklist[16].dead === "true" && checklist[21].dead === "true") {
     bingo()
-} else if(checklist[3].dead === "true" && checklist[8].dead === "true" && checklist[13].dead === "true" && checklist[18].dead === "true" && checklist[23].dead === "true"){
-        bingo()
-} else if(checklist[4].dead === "true" && checklist[9].dead === "true" && checklist[14].dead === "true" && checklist[19].dead === "true" && checklist[24].dead === "true"){
-        bingo()
-}
+  } else if (checklist[2].dead === "true" && checklist[7].dead === "true" && checklist[12].dead === "true" && checklist[17].dead === "true" && checklist[22].dead === "true") {
+    bingo()
+  } else if (checklist[3].dead === "true" && checklist[8].dead === "true" && checklist[13].dead === "true" && checklist[18].dead === "true" && checklist[23].dead === "true") {
+    bingo()
+  } else if (checklist[4].dead === "true" && checklist[9].dead === "true" && checklist[14].dead === "true" && checklist[19].dead === "true" && checklist[24].dead === "true") {
+    bingo()
+  }
 }
 
 
 function checkHorizontalBingo() {
-  if(checklist[0].dead === "true" && checklist[1].dead === "true" && checklist[2].dead === "true" && checklist[3].dead === "true" && checklist[4].dead === "true"){
-    console.log("bingo")
+  if (checklist[0].dead === "true" && checklist[1].dead === "true" && checklist[2].dead === "true" && checklist[3].dead === "true" && checklist[4].dead === "true") {
+    bingo()
+  } else if (checklist[5].dead === "true" && checklist[6].dead === "true" && checklist[7].dead === "true" && checklist[8].dead === "true" && checklist[9].dead === "true") {
+    bingo()
+  } else if (checklist[10].dead === "true" && checklist[11].dead === "true" && checklist[12].dead === "true" && checklist[13].dead === "true" && checklist[14].dead === "true") {
+    bingo()
+  } else if (checklist[15].dead === "true" && checklist[16].dead === "true" && checklist[17].dead === "true" && checklist[18].dead === "true" && checklist[19].dead === "true") {
+    bingo()
+  } else if (checklist[20].dead === "true" && checklist[21].dead === "true" && checklist[22].dead === "true" && checklist[23].dead === "true" && checklist[24].dead === "true") {
+    bingo()
+  }
+}
 
+function checkForAngledBingo() {
+  if (checklist[0].dead === "true" && checklist[6].dead === "true" && checklist[12].dead === "true" && checklist[18].dead === "true" && checklist[24].dead === "true") {
+    bingo()
+  } else if (checklist[20].dead === "true" && checklist[16].dead === "true" && checklist[12].dead === "true" && checklist[8].dead === "true" && checklist[4].dead === "true") {
+    bingo()
   }
 }

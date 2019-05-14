@@ -6,22 +6,34 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="bingo.css" />
   <script src="bingo.js">
+
   </script>
 </head>
 
 <body class="bg-dark">
+  <div id="bingoModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-dark ">
+      <div class="modal-body">
+        <h1 class="name text-center" style="font-size: 5em; color: white;"> BINGO !</h1>
+        <br />
+      </div>
+    </div>
+  </div>
+  </div>
   <div class="mx-auto" style="width: 200px;">
-    <h1 > GoT Bingo! </h1>
+    <img src="images/gotlogo.png" />
+
   </div>
-  <div id="testi">
-    <p id="teksti"></p>
-  </div>
-  <div class="container p-10">
-    <table id="table" class="">
-      <tr>
-        <td id="sq00">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-            <div class="card bg-secondary m-1">
+    <div id="testi">
+      <p id="teksti"></p>
+    </div>
+    <div class="container p-10">
+      <table id="table" class="">
+        <tr>
+          <td id="sq00">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+                      <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq00i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -34,10 +46,10 @@
           </div>
 
         </button>
-        </td>
-        <td id="sq01">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq01">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+                      <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq01i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -48,10 +60,10 @@
             </div>
           </div>
         </button>
-        </td>
-        <td id="sq02">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq02">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+                      <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq02i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -63,10 +75,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq03">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq03">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+                      <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq03i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -78,10 +90,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq04">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq04">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+                      <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq04i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -93,13 +105,13 @@
             </div>
           </div>
         </button>
-        </td>
-      </tr>
+          </td>
+        </tr>
 
-      <tr>
-        <td id="sq10">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+        <tr>
+          <td id="sq10">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+                      <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq10i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -111,10 +123,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq11">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq11">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq11i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -126,10 +138,10 @@
             </div>
           </div>
         </button>
-        </td>
-        <td id="sq12">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq12">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq12i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -141,10 +153,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq13">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq13">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq13i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -156,10 +168,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq14">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq14">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq14i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -171,13 +183,13 @@
 
           </div>
         </button>
-        </td>
-      </tr>
+          </td>
+        </tr>
 
-      <tr>
-        <td id="sq20">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+        <tr>
+          <td id="sq20">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq20i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -189,10 +201,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq21">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq21">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq21i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -204,10 +216,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq22">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq22">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq22i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -219,10 +231,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq23">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq23">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq23i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -234,10 +246,10 @@
             </div>
           </div>
         </button>
-        </td>
-        <td id="sq24">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq24">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq24i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -249,13 +261,13 @@
 
           </div>
         </button>
-        </td>
-      </tr>
+          </td>
+        </tr>
 
-      <tr>
-        <td id="sq30">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+        <tr>
+          <td id="sq30">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq30i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -267,10 +279,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq31">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq31">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq31i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -282,10 +294,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq32">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq32">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq32i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -297,10 +309,10 @@
             </div>
           </div>
         </button>
-        </td>
-        <td id="sq33">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq33">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq33i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -312,10 +324,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq34">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq34">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq34i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -327,13 +339,13 @@
 
           </div>
         </button>
-        </td>
-      </tr>
+          </td>
+        </tr>
 
-      <tr>
-        <td id="sq40">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+        <tr>
+          <td id="sq40">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq40i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -345,10 +357,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq41">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq41">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq41i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -360,10 +372,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq42">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq42">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq42i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -375,10 +387,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq43">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq43">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq43i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -390,10 +402,10 @@
 
           </div>
         </button>
-        </td>
-        <td id="sq44">
-          <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
-<div class="card bg-secondary m-1">
+          </td>
+          <td id="sq44">
+            <button class="bg-transparent p-0 m-0 border-0" onclick="dead(this)">
+          <div class="card bg-secondary m-1">
             <img class=" card-img" alt="test" id="sq44i" src="images/placeholder.png"/>
             <div class="m-0 card-img-overlay d-flex flex-column justify-content-end p-0">
               <div id="marker" class="card-img-overlay p-0 m-0 bg-transparent" style="visibility: hidden; background-image: url('images/swords.png'); background-position: center; background-size: contain; background-repeat: no-repeat;">
@@ -405,15 +417,18 @@
 
           </div>
         </button>
-        </td>
-      </tr>
+          </td>
+        </tr>
 
-    </table>
-    <p><a href="index.html" id="reload" class="btn btn-primary btn-lg btn-block w-100"> New Card </a> to create a new card</p>
+      </table>
+      <p><a href="index.html" id="reload" class="btn btn-primary btn-lg btn-block w-100"> New Card 
 
-  </div>
+    </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 
